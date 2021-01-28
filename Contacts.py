@@ -37,6 +37,7 @@ def add():
         a = e1.get()
         b = e2.get()
         dict[a] = b
+        print(dict)
         e1.delete(0,END)
         e2.delete(0,END)
 
@@ -62,11 +63,13 @@ def search():
     def searchcontact():
         a = e1.get()
         b = dict.keys()
-        if( a in b):
+        c = dict.values()
+        if(a in b):
             print(dict[a])
+        elif(a in c):
+            print(list(dict.keys())[list(dict.values()).index(a)])
         else:
             print("No contact found")
-        e1.delete(0,END)
 
 
     bu1 = Button(window, text='Search', command=searchcontact)
